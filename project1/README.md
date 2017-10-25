@@ -39,4 +39,4 @@ movies = [
 &nbsp;
 &nbsp;
 
-![Website Screenshot](/screenshot.png?raw=true)
+![Website Screenshot](/project1/screenshot.png?raw=true)
