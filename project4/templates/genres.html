@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="main-container">
+		<div class="genres-container">
+			<div class="genres-column">
+				<h3 class="genres-title">Genres</h3>
+				<ul class="genres-list">
+					{% for genre in genres %}
+						<a href="{{url_for('showGenre', genre_id=genre.id)}}">
+							<li class="genre-list-item">{{genre.name}}</li>
+						</a>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="movies-container">
+			<div class="movies-column">
+				<h3 class="movies-title">Movies</h3>
+				<ul class="movies-list">
+					{% for movie in movies %}
+						<li class="movie-list-item">
+							<a href="{{url_for('showMovie', genre_id=movie.genre_id, movie_id=movie.id)}}">{{movie.name}} ({{movie.genre.name}})</a>
+							<div class="movie-rating">
+								<span style="width:{{movie.rating * 10}}%" class="movie-star-rating"></span>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+
+				{% if 'username' in session %}
+					<a class="new-movie-button button" href="{{url_for('newMovie')}}">Add Movie</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

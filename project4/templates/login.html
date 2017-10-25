@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="main-container">
+		<div class="login-container">
+			<div class="button-container">
+				<span class="g-signin"
+					data-scope="openid email"
+					data-clientid="301778366962-15rvbn6aaq42qtuqg6orek1t258bpend.apps.googleusercontent.com"
+					data-redirecturi="postmessage"
+					data-accesstype="offline"
+					data-cookiepolicy="single_host_origin"
+					data-callback="signInCallback"
+					data-approvalprompt="force">
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// This function either signs the user into Google or sends an error message
+		function signInCallback(authResult) {
+			if (authResult['code']) {
+				$('#signinButton').attr('style', 'display: none');
+				$.ajax({
+					type: 'POST',
+					url: '/gconnect?state={{state}}',
+					processData: false,
+					data: authResult['code'],
+					contentType: 'application/octet-stream; charset=utf-8',
+					success: function(result) {
+								if (result) {
+									$('#login').html('Logging in...')
+							window.location.href = "/";
+						} else if (authResult['error']) {
+							console.log('There was an error: ' + authResult['error']);
+						} else {
+							$('#login').html('Failed to make a server-side call. Check your configuration and console.');
+						}
+					}
+				});
+			}
+		}
+	</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Movie Catalog</title>
+		<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="//apis.google.com/js/platform.js?onload=start"> </script>
+
+		<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Linden%20Hill">
+		<link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+		<link rel="stylesheet" type=text/css media="screen and (max-width:600px)" href="{{url_for('static', filename='under600.css')}}">
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<div class="header-container">
+					<div class="header-home">
+						<a class="home-button" href="{{url_for('showGenres')}}">Home</a>
+					</div>
+					<div class="header-login">
+						{% if 'username' not in session %}
+							<a class="login-button" href="{{url_for('login')}}">Login</a>
+						{% else %}
+							<a class="logout-button" href="{{url_for('logout')}}">Logout</a>
+						{% endif %}
+					</div>
+				</div>
+			</header>
+
+			<main>
+				{% block content %}
+				{% endblock %}
+			</main>
+		</div>
+	</body>
+</html>

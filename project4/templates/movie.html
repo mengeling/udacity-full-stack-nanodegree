@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="main-container">
+		<div class="movie-column">
+			<h3 class="movie-title">{{movie.name}}</h3>
+
+			<div class="movie-genre-row">
+				<p>{{genre.name}}</p>
+			</div>
+
+			<div class="movie-rating-row">
+				<p class="movie-rating-text">Rating: {{movie.rating}}/10</p>
+				<div class="movie-rating-middle">
+					<span style="width:{{movie.rating * 10}}%" class="movie-star-rating-middle"></span>
+				</div>
+			</div>
+
+			<div class="movie-description-row">
+				<p>{{movie.description}}</p>
+			</div>
+
+			<div class="movie-buttons-row">
+				<a class="back-button button" href="{{url_for('showGenre', genre_id=genre.id)}}">Back</a>
+				{% if 'username' in session and user.id == session['user_id'] %}
+					<a class="edit-button button" href="{{url_for('editMovie', genre_id=genre.id, movie_id=movie.id)}}">Edit</a>
+					<a class="delete-button button" href="{{url_for('deleteMovie', genre_id=genre.id, movie_id=movie.id)}}">Delete</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

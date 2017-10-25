@@ -1,0 +1,121 @@
+html,
+body,
+.container,
+.list {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display SC","Helvetica","Sans";
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  height: 55px;
+  width: 100%;
+  float: right;
+  display: none;
+  background-color: #F2F2F2;
+  border-bottom: 0.1rem solid #D9D9D9;
+}
+
+.hamburger-container {
+  float: left;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 5px 0;
+}
+
+main {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  float: right;
+}
+
+.map-error {
+  height: 100%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 20%;
+  font-family: 'Arial';
+}
+
+aside {
+  position: fixed;
+  height: 100%;
+  width: 275px;
+  background-color: #F2F2F2;
+  border-right: 0.1rem solid #D9D9D9;
+}
+
+.list-container {
+  height: 100%;
+  padding: 5%;
+  margin: 0;
+  position: relative;
+}
+
+.list-title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  width: 100%;
+  font-size: 0.9em;
+  margin-top: 6%;
+  margin-bottom: 3%;
+}
+
+#list-items {
+  font-family: "Helevetica";
+  margin-left: 2%;
+  margin-top: 7.5%;
+  cursor: pointer;
+}
+
+.info-text {
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+}
+
+.paw-image {
+  position: absolute;
+  bottom: 7.5%;
+  left: 31.5%;
+}
+
+@media screen and (max-height: 600px) {
+  .paw-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    display: block;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+.show-aside {
+  display: block;
+}
