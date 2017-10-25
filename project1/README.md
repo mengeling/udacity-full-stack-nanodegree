@@ -1,5 +1,4 @@
 # Movie Trailer Website
-[View Static Website](https://mengeling.github.io/udacity-full-stack-project-1/)
 
 ## Installation
 * Press "Fork" to create a copy of this repository on your own GitHub account

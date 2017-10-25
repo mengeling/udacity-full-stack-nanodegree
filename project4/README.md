@@ -19,4 +19,4 @@ This project uses a SQLite database and local server to create a web application
 &nbsp;
 &nbsp;
 
-![Website Screenshot](/static/screenshot.png?raw=true)
+![Website Screenshot](/project4/static/screenshot.png?raw=true)
