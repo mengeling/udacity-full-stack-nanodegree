@@ -4,14 +4,18 @@
 		<div class="new-movie-column">
 			<h3 class="new-movie-title">Add New Movie</h3>
 
+			<!-- Add movie form -->
 			<form class="new-movie-form" action="#" method="post">
 				<fieldset>
+					<!-- Name field -->
 					<label class="form-label">Name:</label>
 					<input class="form-input" type="text" name="name" placeholder="Name of Movie">
 
+					<!-- Movie rating field -->
 					<label class="form-label">Rating:</label>
 					<input class="form-input" type="number" min="0" max="10" step="0.1" name="rating" placeholder="Number from 0 - 10">
 
+					<!-- Movie genre field -->
 					<label class="form-label">Genre:</label>
 					<select class="form-input" name="genre">
 						{% for genre in genres %}
@@ -19,10 +23,12 @@
 						{% endfor %}
 					</select>
 
+					<!-- Movie description field -->
 					<label class="form-label">Description:</label>
 					<textarea class="form-input" name="description" rows="10"></textarea>
 				</fieldset>
 
+				<!-- Submit and cancel buttons -->
 				<a class="cancel-button button" href="{{url_for('showGenres')}}">Cancel</a>
 				<input class="submit-button button" type="submit" value="Add Movie">
 			</form>

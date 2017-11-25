@@ -4,6 +4,7 @@
 		<div class="delete-movie-column">
 			<h3 class="delete-movie-title">Delete {{movie.name}}?</h3>
 
+			<!-- Delete and cancel buttons -->
 			<form class="delete-movie-form" action="#" method="post">
 				<a class="cancel-button button" href="{{url_for('showMovie', genre_id=movie.genre_id, movie_id = movie.id )}}">Cancel</a>
 				<input class="submit-button button" type="submit" value="Delete">

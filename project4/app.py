@@ -1,14 +1,14 @@
+import random
+import string
+import httplib2
+import json
+import requests
 from flask import flash, Flask, jsonify, make_response, redirect
 from flask import render_template, request, url_for
 from flask import session as login_session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
-import random
-import string
-import httplib2
-import json
-import requests
 
 from database_setup import Base, User, Genre, Movie
 

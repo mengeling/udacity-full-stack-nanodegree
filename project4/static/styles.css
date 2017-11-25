@@ -1,3 +1,4 @@
+/* General styling */
 body {
     box-sizing: border-box;
     color: #625F59;
@@ -56,6 +57,7 @@ fieldset {
   right: 7.5vw;
 }
 
+/* Main container styling */
 .main-container {
   display: flex;
   margin: 3%;
@@ -68,12 +70,14 @@ fieldset {
   padding-left: 10%;
 }
 
+/* Main page genres column styling */
 .genres-container {
   max-width: 30%;
   flex: 1;
   margin: 2%;
 }
 
+/* Main page movies column styling */
 .movies-container {
   max-width: 70%;
   flex: 1;
@@ -81,6 +85,7 @@ fieldset {
   margin: 2%;
 }
 
+/* Movie page styling */
 .movie-column {
   display: block;
   text-align: center;
@@ -116,6 +121,7 @@ fieldset {
   margin-bottom: 5%;
 }
 
+/* Styling for new, edit, and delete movie pages */
 .new-movie-column,
 .edit-movie-column,
 .delete-movie-column {
@@ -124,6 +130,7 @@ fieldset {
   width: 100%;
 }
 
+/* Form styling */
 .form-label {
   font-weight: bold;
   width: 100%;
@@ -141,6 +148,7 @@ input.button {
   font-size: 0.85em;
 }
 
+/* Login page styling */
 .login-container {
   width: 100%;
   height: 20em;
@@ -154,6 +162,7 @@ input.button {
   height: 100%;
 }
 
+/* Button styling */
 .button-container {
   display: inline-block;
 }
@@ -171,6 +180,7 @@ input.button {
   margin-left: 10%;
 }
 
+/* Star rating styling */
 .movie-rating {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
   overflow: hidden;

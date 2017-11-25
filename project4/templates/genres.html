@@ -1,6 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 	<div class="main-container">
+		<!-- Left column listing genres -->
 		<div class="genres-container">
 			<div class="genres-column">
 				<h3 class="genres-title">Genres</h3>
@@ -14,6 +15,7 @@
 			</div>
 		</div>
 
+		<!-- Right column listing movies with genre name and star rating -->
 		<div class="movies-container">
 			<div class="movies-column">
 				<h3 class="movies-title">Movies</h3>
@@ -28,6 +30,7 @@
 					{% endfor %}
 				</ul>
 
+				<!-- Add movie button (only shown when logged in) -->
 				{% if 'username' in session %}
 					<a class="new-movie-button button" href="{{url_for('newMovie')}}">Add Movie</a>
 				{% endif %}

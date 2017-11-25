@@ -2,12 +2,15 @@
 {% block content %}
 	<div class="main-container">
 		<div class="movie-column">
+			<!-- Movie title -->
 			<h3 class="movie-title">{{movie.name}}</h3>
 
+			<!-- Movie genre -->
 			<div class="movie-genre-row">
 				<p>{{genre.name}}</p>
 			</div>
 
+			<!-- Movie rating (numerical and stars) -->
 			<div class="movie-rating-row">
 				<p class="movie-rating-text">Rating: {{movie.rating}}/10</p>
 				<div class="movie-rating-middle">
@@ -15,10 +18,12 @@
 				</div>
 			</div>
 
+			<!-- Movie description -->
 			<div class="movie-description-row">
 				<p>{{movie.description}}</p>
 			</div>
 
+			<!-- Back, edit, and delete buttons -->
 			<div class="movie-buttons-row">
 				<a class="back-button button" href="{{url_for('showGenre', genre_id=genre.id)}}">Back</a>
 				{% if 'username' in session and user.id == session['user_id'] %}

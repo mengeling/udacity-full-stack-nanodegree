@@ -1,3 +1,4 @@
+/* General styling */
 * {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
@@ -26,6 +27,7 @@ hr {
     margin: 3%;
 }
 
+/* Header styling */
 .header-row {
   display: flex;
   flex-wrap: wrap;
@@ -43,6 +45,7 @@ hr {
   margin: 1%;
 }
 
+/* Main project section */
 .main-project {
   display: flex;
   margin-top: 7.5%;
@@ -57,6 +60,7 @@ hr {
   display: block;
 }
 
+/* 3 other featured projects */
 .featured-row {
   display: flex;
   margin: auto;
@@ -77,6 +81,7 @@ hr {
   font-size: 0.85em;
 }
 
+/* Footer styling */
 .footer {
   text-align: center;
   margin-top: 0;
