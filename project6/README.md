@@ -29,7 +29,7 @@
   * `sudo ufw allow www`
   * `sudo ufw allow ntp`
   * `sudo ufw enable`
-  * Also add port 2200 and port 123 on the Networking page of the instance console on https://lightsail.aws.amazon.com
+  * Also, add port 2200 and port 123 on the Networking page of the instance console on https://lightsail.aws.amazon.com
 5. Create grader user
   * `sudo adduser grader`
   * Create temporary password
@@ -71,7 +71,7 @@
   * Clone the project using `sudo git clone https://github.com/mengeling/udacity-full-stack-project-4.git`
   * Type `sudo mv udacity-full-stack-project-4 catalog && cd $_` to rename directory and move into it
 14. Make changes to **catalog** files
-  * Rename the **app.py** file to init with `sudo mv app.py __init__.py`
+  * Rename the **app.py** file to **__init__.py** with `sudo mv app.py __init__.py`
   * Run `sudo nano __init__.py` and add the full client secrets file path when the file is opened here:
   ```
   open('/var/www/catalog/catalog/client_secrets.json', 'r').read())['web']['client_id']

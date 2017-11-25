@@ -12,4 +12,4 @@ For this project, I created an internal reporting tool that determines which new
 8. Once it's done installing, type `vagrant ssh` to log into the virtual machine
 9. Type `cd /vagrant` to navigate to the directory that is shared with the **vagrant** directory on your computer
 10. Confirm the **newsdata.sql** and **news_analysis.py** files are in the virtual machine's **vagrant** directory
-11. Type `python3 news_analysis.py` to run the program
+11. Type `python news_analysis.py` to run the program
