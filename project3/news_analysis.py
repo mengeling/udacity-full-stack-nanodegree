@@ -79,7 +79,7 @@ def errors_over_one_percent():
         print("  {} - {}% errors\n"
               .format(row[0].strftime("%B %d, %Y"), round(row[1], 2)))
 
-# Ensure the program is run directly from the terminal
+
 if __name__ == "__main__":
     top_articles()
     top_authors()
