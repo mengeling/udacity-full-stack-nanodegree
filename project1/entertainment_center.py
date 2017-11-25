@@ -1,5 +1,5 @@
 import media
-import index
+import fresh_tomatoes
 
 # Provide movie info and links as arguments to the Movie class in media.py
 # to assign attributes to each instance of a movie.
@@ -59,4 +59,4 @@ movies = [
     ]
 
 # Provide movies list to "open_movies_page" function to create the HTML file
-index.open_movies_page(movies)
+fresh_tomatoes.open_movies_page(movies)
