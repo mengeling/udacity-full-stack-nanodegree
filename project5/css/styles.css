@@ -45,7 +45,7 @@ main {
 /* Map styling */
 #map {
   height: 100%;
-  width: 100%;
+  width: calc(100% - 275px);
   float: right;
 }
 
@@ -120,6 +120,10 @@ input {
 
   aside {
     display: none;
+  }
+
+  #map {
+    width: 100%;
   }
 }
 

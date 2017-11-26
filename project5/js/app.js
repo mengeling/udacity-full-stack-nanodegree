@@ -9,7 +9,7 @@ function init() {
 
   // Create map object at central location
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 30.26, lng: -97.765},
+    center: {lat: 30.265, lng: -97.755},
     zoom: 13,
     mapTypeControlOptions: {position: google.maps.ControlPosition.TOP_RIGHT}
   });
@@ -31,7 +31,7 @@ function init() {
 
   }
 
-  // Run application
+  // Apply bindings to the Knockout view model
   ko.applyBindings(new ViewModel());
 
 }
@@ -53,7 +53,7 @@ function createInfoWindow(marker) {
     infoWindow.close();
   }
 
-  // Create Foursquare API url using the park's ID and client id and secret
+  // Create Foursquare API url using park's ID and client id and client secret
   var apiUrl = 'https://api.foursquare.com/v2/venues/' + marker.id +
     '?client_id=ZCZJB4L2CNBDA0VYTEGDE0JFZACWBXC1S30LJ2MAOTRIG315&client_' +
     'secret=K52RW1KSIXMCOQ0HR15BZZFXYRWUP0MR2ZLAUPSX5YGDO5SD&v=20170911';
@@ -72,7 +72,7 @@ function createInfoWindow(marker) {
     infoWindow = new google.maps.InfoWindow({maxWidth: 120});
     infoWindow.marker = marker;
 
-    // Set content to the marker's foursquare data
+    // Set content to the marker's Foursquare data
     infoWindow.setContent(
       '<img class="info-image" src="' + photo + '">' +
       '<div class="info-text">' + '<a target="_blank" href="' + url + '">' +
@@ -125,15 +125,6 @@ var ViewModel = function() {
     });
   }, this);
 
-
-  self.mapSize = ko.computed(function() {
-    if ($('aside').css('display') == 'none') {
-      return '100%';
-    } else {
-      return 'calc(100% - 275px)';
-    }
-  });
-
 };
 
 
@@ -151,14 +142,14 @@ function toggleAside() {
   // Toggle show-aside class on and off. Show-aside displays the aside as block
   $('aside').toggleClass('show-aside');
 
-  // If aside is hidden move hamburger all the way to the right
-  // Otherwise move the hamburger to the right of the aside
+  // If aside is hidden, move hamburger all the way to the left and enlarge map
+  // Otherwise move hamburger to the right of the aside and make map smaller
   if ($('aside').is(':hidden')) {
     $('.hamburger-container').css('margin-left', '0');
-    // $('#map').css('width', '100%');
+    $('#map').css('width', '100%');
   } else {
     $('.hamburger-container').css('margin-left', '275px');
-    // $('#map').css('width', 'calc(100% - 275px)');
+    $('#map').css('width', 'calc(100% - 275px)');
   }
 
 }
