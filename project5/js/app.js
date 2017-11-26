@@ -4,7 +4,7 @@ var infoWindow;
 var markers = [];
 
 
-// This fuction initializes the map
+// This function initializes the map
 function init() {
 
   // Create map object at central location
@@ -25,8 +25,7 @@ function init() {
       position: parkMarkers[i].position,
     });
 
-    // Add marker to empty markers array
-    // Then create a click listener for it
+    // Add marker to empty markers array and create a click listener for it
     markers.push(marker);
     createClickListener(marker);
 
@@ -91,7 +90,7 @@ function createInfoWindow(marker) {
 
   }).fail(function() {
 
-    // If there's an error, create an infowindow and display an error message
+    // If there's an error, create an info window and display an error message
     infoWindow = new google.maps.InfoWindow();
     infoWindow.marker = marker;
     infoWindow.setContent(
@@ -124,7 +123,16 @@ var ViewModel = function() {
         marker.setVisible(false);
       }
     });
-   }, this);
+  }, this);
+
+
+  self.mapSize = ko.computed(function() {
+    if ($('aside').css('display') == 'none') {
+      return '100%';
+    } else {
+      return 'calc(100% - 275px)';
+    }
+  });
 
 };
 
@@ -147,8 +155,10 @@ function toggleAside() {
   // Otherwise move the hamburger to the right of the aside
   if ($('aside').is(':hidden')) {
     $('.hamburger-container').css('margin-left', '0');
+    // $('#map').css('width', '100%');
   } else {
     $('.hamburger-container').css('margin-left', '275px');
+    // $('#map').css('width', 'calc(100% - 275px)');
   }
 
 }

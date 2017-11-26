@@ -105,14 +105,14 @@ input {
   left: 31.5%;
 }
 
-/* Disable paw image below 600px */
+/* Disable paw image when height is less than 600px */
 @media screen and (max-height: 600px) {
   .paw-image {
     display: none;
   }
 }
 
-/* Disable left aside */
+/* Disable left aside when width is less than 850px */
 @media screen and (max-width: 850px) {
   header {
     display: block;
@@ -123,6 +123,6 @@ input {
   }
 }
 
+/* Extra class that gets toggled on and off by the hamburger */
 .show-aside {
   display: block;
-}

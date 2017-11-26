@@ -20,19 +20,15 @@
           <div class="hamburger"></div>
         </div>
       </header>
-      <main id="map"></main>
+      <main id="map" data-bind="style: { width: mapSize }"></main>
       <aside>
         <div class="list-container">
-          <!-- Aside title -->
           <h3 class="list-title">Austin's Best Dog Parks</h3>
-          <!-- Aside search bar -->
           <input type="search" data-bind="textInput: search" placeholder="Search Parks...">
           <hr>
-          <!-- Aside list -->
           <ul class="list" data-bind="foreach: filteredParks">
             <li id="list-items" data-bind="text: $data.title, click: createInfoWindow"></li>
           </ul>
-          <!-- Aside paw -->
           <div class=paw-image>
             <img alt="Paw Image" src="img/paw.png">
           </div>
