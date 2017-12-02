@@ -12,8 +12,8 @@ from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 
 from database_setup import Base, User, Genre, Movie
 
+# Instantiate app
 app = Flask(__name__)
-
 
 # Connect to database
 engine = create_engine('sqlite:///moviecatalog.db')
@@ -24,7 +24,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # Store client ID from the Google JSON file
-client_id = json.loads(
+CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
 
 
@@ -221,7 +221,7 @@ def login():
     # Create state token
     state = ''.join(
         random.choice(string.ascii_uppercase + string.digits)
-        for x in xrange(32))
+        for x in range(32))
     login_session['state'] = state
 
     # Render login template
@@ -297,7 +297,7 @@ def gconnect():
 
     # Send reponse if the client ID isn't intended for this app
     # Use client_id from client_secrets.json file
-    if result['issued_to'] != client_id:
+    if result['issued_to'] != CLIENT_ID:
         response = make_response(json.dumps(
             "Token's client ID does not match app's."), 401)
         print("Token's client ID does not match app's.")
